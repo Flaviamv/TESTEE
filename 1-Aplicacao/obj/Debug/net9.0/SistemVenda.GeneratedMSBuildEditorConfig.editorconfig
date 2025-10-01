@@ -17,97 +17,97 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemVenda
 build_property.RootNamespace = SistemVenda
-build_property.ProjectDir = /Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/
+build_property.ProjectDir = E:\ASA\Estagiarios\TESTEE\1-Aplicacao\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /Users/flavia-asa/Documents/SistemVenda/1-Aplicacao
+build_property.MSBuildProjectDirectory = E:\ASA\Estagiarios\TESTEE\1-Aplicacao
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Error/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = RXJyb3IvaW5kZXguY3NodG1s
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Error/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = RXJyb3JcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Categoria/cadastro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmlhL2NhZGFzdHJvLmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Categoria/cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXGNhZGFzdHJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Categoria/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmlhL2luZGV4LmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Categoria/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Cliente/cadastro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50ZS9jYWRhc3Ryby5jc2h0bWw=
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Cliente/cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxjYWRhc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Cliente/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50ZS9pbmRleC5jc2h0bWw=
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Cliente/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Configuracao/cadastro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29uZmlndXJhY2FvL2NhZGFzdHJvLmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Configuracao/cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhY2FvXGNhZGFzdHJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Configuracao/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29uZmlndXJhY2FvL2luZGV4LmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Configuracao/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhY2FvXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vSW5kZXguY3NodG1s
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Produto/cadastro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHV0by9jYWRhc3Ryby5jc2h0bWw=
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Produto/cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xjYWRhc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Produto/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHV0by9pbmRleC5jc2h0bWw=
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Produto/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Relatorio/grafico.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVsYXRvcmlvL2dyYWZpY28uY3NodG1s
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Relatorio/grafico.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsYXRvcmlvXGdyYWZpY28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Shared/_Scripts.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TY3JpcHRzLmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Shared/_Scripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TY3JpcHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Venda/cadastro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVuZGEvY2FkYXN0cm8uY3NodG1s
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Venda/cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZGFcY2FkYXN0cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Venda/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVuZGEvaW5kZXguY3NodG1s
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Venda/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZGFcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-lhrfjj9gp8
+[E:/ASA/Estagiarios/TESTEE/1-Aplicacao/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pe9bmpxppp

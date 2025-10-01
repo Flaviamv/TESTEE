@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemVenda", "SistemVenda.csproj", "{8D2CB2DF-1539-0A27-789A-939BCC81CFBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemVenda", ".\1-Aplicacao\SistemVenda.csproj", "{8D2CB2DF-1539-0A27-789A-939BCC81CFBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-Dominio", "..\2-Dominio\2-Dominio.csproj", "{02B63C54-8FFF-47AD-AF71-73ACD4E06BB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-Dominio", ".\2-Dominio\2-Dominio.csproj", "{02B63C54-8FFF-47AD-AF71-73ACD4E06BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-Repositorio", "..\3-Repositorio\3-Repositorio.csproj", "{7754DD88-5E4E-4FD9-B5D3-58C836C37756}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-Repositorio", ".\3-Repositorio\3-Repositorio.csproj", "{7754DD88-5E4E-4FD9-B5D3-58C836C37756}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
