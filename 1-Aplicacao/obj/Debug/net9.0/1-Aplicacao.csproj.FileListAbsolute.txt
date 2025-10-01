@@ -1,0 +1,4 @@
+/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/obj/Debug/net9.0/1-Aplicacao.GeneratedMSBuildEditorConfig.editorconfig
+/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/obj/Debug/net9.0/1-Aplicacao.AssemblyInfoInputs.cache
+/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/obj/Debug/net9.0/1-Aplicacao.AssemblyInfo.cs
+/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/obj/Debug/net9.0/1-Aplicacao.csproj.CoreCompileInputs.cache

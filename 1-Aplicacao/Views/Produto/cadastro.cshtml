@@ -1,0 +1,83 @@
+@{
+  ViewData["Title"] = "Produto";
+}
+
+<h2> Cliente </h2>
+<hr />
+
+@model SistemVenda.Models.ProdutoViewModel
+
+@{
+  var disabled = (Model.Codigo == null) ? "disabled" : string.Empty;
+}
+
+<form asp-controller="Produto" asp-action="Cadastro" method="post">
+  <input type="hidden" asp-for="Codigo" value="@Model.Codigo" />
+
+  <div class="form-gruoup">
+    <div class="col-4">
+      <label> Descrição </label>
+      <input asp-for="Descricao" type="text" value="@Model.Descricao" class="form-control" />
+      <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+  </div>
+
+  <div class="form-gruoup">
+    <div class="col-4">
+      <label> Quantidade </label>
+      <input asp-for="Quantidade" type="text" value="@Model.Quantidade" class="form-control" />
+      <span asp-validation-for="Quantidade" class="text-danger"></span>
+    </div>
+  </div>
+
+  <div class="form-gruoup">
+    <div class="col-4">
+      <label> Valor </label>
+      <input asp-for="Valor" type="text" value="@Model.Valor" class="form-control" />
+      <span asp-validation-for="Valor" class="text-danger"></span>
+    </div>
+  </div>
+
+  <div class="form-gruoup">
+    <div class="col-4">
+      <label> Categoria </label>
+      <select asp-for="CodigoCategoria" class="form-control input-lg" asp-items="@Model.ListaCategorias"></select>
+      <span asp-validation-for="CodigoCategoria" class="text-danger"></span>
+    </div>
+  </div>
+
+  <br />
+  <div class="col">
+    <button type="button" class="btn btn-info" onclick="Novo()"> Novo </button>
+    <button type="submit" class="btn btn-success"> Gravar </button>
+    <button type="button" class="btn btn-warning" onclick="Listagem()"> Listagem </button>
+    @if (Model.Codigo.HasValue){
+      <button type="button" class="btn btn-danger" onclick="Excluir(@Model.Codigo.Value)"> Excluir </button>
+    }
+  </div>
+</form>
+
+
+<script>
+  function Novo() {
+    @* console.log("teste"); *@
+      Request("Cadastro");
+  }
+  function Listagem() {
+    Request("");
+  }
+  async function Excluir(Codigo) {
+    const resposta = await request.delete(`@Url.Action("Excluir", "Produto")/${Codigo}`);
+    const data = await resposta.json();
+    if (data.Success && data.Data){
+      SwalUtils.success("Produto deletado com sucesso").then(() => {
+        Request("Index");
+      });
+    } else {
+      SwalUtils.error(data.Message);
+    }
+  }
+  function Request(url) {
+    window.location = "/Produto/" + url;
+  }
+</script>
