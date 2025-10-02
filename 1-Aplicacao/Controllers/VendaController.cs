@@ -26,7 +26,7 @@ namespace SistemVenda.Controllers
         [HttpGet("Index")]
         public IActionResult Index()
         {
-            IEnumerable<Venda> lista = mContext.Venda.ToList();
+            List<Venda> lista = mContext.Venda.ToList();
             mContext.Dispose();
             return View(lista);
         }

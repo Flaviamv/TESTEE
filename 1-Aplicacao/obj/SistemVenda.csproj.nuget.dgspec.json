@@ -1,33 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ASA\\Estagiarios\\TESTEE\\1-Aplicacao\\SistemVenda.csproj": {}
+    "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj": {}
   },
   "projects": {
-    "E:\\ASA\\Estagiarios\\TESTEE\\1-Aplicacao\\SistemVenda.csproj": {
+    "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ASA\\Estagiarios\\TESTEE\\1-Aplicacao\\SistemVenda.csproj",
+        "projectUniqueName": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj",
         "projectName": "SistemVenda",
-        "projectPath": "E:\\ASA\\Estagiarios\\TESTEE\\1-Aplicacao\\SistemVenda.csproj",
-        "packagesPath": "C:\\Users\\M_Ant\\.nuget\\packages\\",
-        "outputPath": "E:\\ASA\\Estagiarios\\TESTEE\\1-Aplicacao\\obj\\",
+        "projectPath": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj",
+        "packagesPath": "/Users/flavia-asa/.nuget/packages/",
+        "outputPath": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\M_Ant\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/flavia-asa/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -100,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

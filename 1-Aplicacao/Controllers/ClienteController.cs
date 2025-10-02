@@ -21,7 +21,7 @@ namespace SistemVenda.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Cliente> lista = mContext.Cliente.ToList();
+            List<Cliente> lista = mContext.Cliente.ToList();
             return View(lista);
         }
 

@@ -22,7 +22,7 @@ namespace SistemVenda.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Produto> lista = mContext.Produto.Include(p=> p.Categoria).ToList();
+            List<Produto> lista = mContext.Produto.Include(p=> p.Categoria).ToList();
             mContext.Dispose();
             return View(lista);
         }
