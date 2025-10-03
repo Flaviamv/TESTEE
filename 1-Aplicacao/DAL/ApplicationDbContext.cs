@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SistemVenda.Dominio.Entidade;
 using SistemVenda.Entidade;
 
 namespace SistemVenda.DAL

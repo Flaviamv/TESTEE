@@ -6,10 +6,10 @@ using SistemVenda.Models;
 
 namespace Aplicacao.Servico.Interfaces
 {
-    public interface IServicoAplicacaoCategoria
+    public interface IServicoAplicacaoCliente
     {
-        void Cadastrar(CategoriaViewModel entidade);
-        CategoriaViewModel CarregarRegistro(object codigoCategoria);
+        void Cadastrar(ClienteViewModel cliente);
+        ClienteViewModel CarregarRegistro(object codigoCliente);
         void Excluir(int id);
     public IEnumerable<CategoriaViewModel> Listagem();
 

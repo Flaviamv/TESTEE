@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemVenda.Dominio.Entidade
 {
-    public class Venda
+    public class Venda : EntityBase
     {
-        [Key]
         public int? Codigo { get; set; }
         public DateTime Data { get; set; }
         public decimal Total { get; set; }

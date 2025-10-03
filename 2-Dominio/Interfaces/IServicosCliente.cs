@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dominio.Interfaces
 {
-    public interface IServicosCategoria : IServicoCRUD<Categoria>
+    public interface IServicosCliente : IServicoCRUD<Categoria>
     {
          
     }

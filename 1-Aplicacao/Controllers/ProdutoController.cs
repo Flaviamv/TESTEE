@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Aplicacao.Servico;
+using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,58 +15,36 @@ namespace SistemVenda.Controllers
 {
     public class ProdutoController : Controller
     {
-        protected ApplicationDbContext mContext;
+        readonly IServicoAplicacaoProduto ServicoAplicacao;
 
-        public ProdutoController(ApplicationDbContext context)
+        public ProdutoController(IServicoAplicacaoProduto servico)
+
         {
-            mContext = context;
+            ServicoAplicacao = servico;
         }
 
         public IActionResult Index()
         {
-            List<Produto> lista = mContext.Produto.Include(p=> p.Categoria).ToList();
-            mContext.Dispose();
-            return View(lista);
+            return View(ServicoAplicacao.Listagem());
         }
 
-        private IEnumerable<SelectListItem> ListaCategoria()
+        public IActionResult Cadastro(int? id)
         {
-            List<SelectListItem> lista = new List<SelectListItem>();
+            ProdutoViewModel viewModel = new ProdutoViewModel();
 
-            lista.Add(new SelectListItem()
+            if (id != null)
             {
-                Value = string.Empty,
-                Text = string.Empty
-            });
-
-            foreach (var item in mContext.Categoria.ToList())
-            {
-
-                lista.Add(new SelectListItem()
-                {
-                    Value = item.Codigo.ToString(),
-                    Text = item.Descricao.ToString()
-                });
+                viewModel = ServicoAplicacao.CarregarRegistro((int)id);
             }
-
-            return lista;
+            return View(viewModel);
         }
 
         [HttpGet] //renderiza tela vazia 
         public IActionResult Cadastro(int? id)
         {
-            ProdutoViewModel viewModel = new ProdutoViewModel();
-            viewModel.ListaCategorias = ListaCategoria();
-
             if (id != null)
             {
-                var entidade = mContext.Produto.Where(x => x.Codigo == id).FirstOrDefault();
-                viewModel.Codigo = entidade.Codigo;
-                viewModel.Descricao = entidade.Descricao;
-                viewModel.Quantidade = entidade.Quantidade;
-                viewModel.Valor = entidade.Valor;
-                viewModel.CodigoCategoria = entidade.CodigoCategoria;
-
+                viewModel = ServicoAplicacao.CarregarRegistro((int)id);
             }
 
             return View(viewModel);
@@ -75,46 +55,30 @@ namespace SistemVenda.Controllers
         {
             if (ModelState.IsValid)
             {
-                Produto objProduto = new Produto()
                 {
-                    Codigo = entidade.Codigo,
-                    Descricao = entidade.Descricao,
-                    Quantidade = (float)entidade.Quantidade,
-                    Valor = (decimal)entidade.Valor,
-                    CodigoCategoria = (int)entidade.CodigoCategoria
-                };
-
-                if (entidade.Codigo == null)
-                {
-                    mContext.Produto.Add(objProduto);
+                    ServicoAplicacaoProduto.Cadastro(entidade);
                 }
-                else
-                {
-                    mContext.Entry(objProduto).State = EntityState.Modified;
-                }
-
-                mContext.SaveChanges();
             }
+
             else
             {
-                entidade.ListaCategorias = ListaCategoria();
                 return View(entidade);
             }
 
-            return RedirectToAction("Index");
-        }
+                return RedirectToAction("Index");
+            }
 
-        [HttpDelete]
-        public IActionResult Excluir([FromRoute] int id)     
-        {
-            var ent = new Produto() { Codigo = id };
-            mContext.Produto.Remove(ent);
-            var success = mContext.SaveChanges() > 0;
-            var response = new ApiResponse<bool>(success);
-            if (!success)
-                response.Message = "Falha ao excluir produto.";
+            [HttpDelete]
+            public IActionResult Excluir([FromRoute] int id)
+            {
+                var ent = new Produto() { Codigo = id };
+                mContext.Produto.Remove(ent);
+                var success = mContext.SaveChanges() > 0;
+                var response = new ApiResponse<bool>(success);
+                if (!success)
+                    response.Message = "Falha ao excluir produto.";
 
-            return Json(response);
+                return Json(response);
+            }
         }
     }
-}

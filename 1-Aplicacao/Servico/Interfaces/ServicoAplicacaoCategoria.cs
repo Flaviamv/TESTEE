@@ -4,6 +4,8 @@ using SistemVenda.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SistemVenda.Entidade;
+using SistemVenda.Dominio.Entidade;
 
 namespace Aplicacao.Servico
 {
@@ -11,19 +13,51 @@ namespace Aplicacao.Servico
     {
         private readonly IServicoAplicacaoCategoria _servicoCategoria;
 
-    public ServicoAplicacaoCategoria(IServicoAplicacaoCategoria servicoCategoria)
+        public ServicoAplicacaoCategoria(IServicoAplicacaoCategoria servicoCategoria)
         {
             _servicoCategoria = servicoCategoria;
         }
 
-         public IEnumerable<CategoriaViewModel> Listagem()
+        public void Cadastrar(CategoriaViewModel categoria)
+        {
+            CategoriaViewModel categoria1 = new CategoriaViewModel()
+            {
+                Codigo = categoria.Codigo,
+                Descricao = categoria.Descricao
+            };
+
+            _servicoCategoria.Cadastrar(categoria1);
+
+        }
+
+        public CategoriaViewModel CarregarRegistro(object codigoCategoria)
+        {
+            if (codigoCategoria == null) return new CategoriaViewModel();
+
+            var registro = _servicoCategoria.CarregarRegistro(codigoCategoria);
+
+            CategoriaViewModel categoria = new CategoriaViewModel()
+            {
+                Codigo = registro.Codigo,
+                Descricao = registro.Descricao
+            };
+
+            return categoria;
+        }
+
+        public void Excluir(int id)
+        {
+            _servicoCategoria.Excluir(id);
+        }
+
+        public IEnumerable<CategoriaViewModel> Listagem()
         {
             var lista = _servicoCategoria.Listagem();
             List<CategoriaViewModel> listaCategoria = new List<CategoriaViewModel>();
 
             foreach (var item in lista)
             {
-                 CategoriaViewModel categoria = new CategoriaViewModel()
+                CategoriaViewModel categoria = new CategoriaViewModel()
                 {
                     Codigo = item.Codigo,
                     Descricao = item.Descricao
@@ -33,6 +67,4 @@ namespace Aplicacao.Servico
             return listaCategoria;
         }
     }
-
-
 }

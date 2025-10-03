@@ -16,4 +16,10 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\2-Dominio\SistemVenda.Dominio.csproj" />
+    <ProjectReference Include="..\3-Repositorio\SistemVenda.Repositorio.csproj" />
+    <ProjectReference Include="..\4-Servico\SistemVenda.Servico.csproj" />
+  </ItemGroup>
+
 </Project>
