@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Models;
 
 namespace SistemVenda.Repositorio
 {

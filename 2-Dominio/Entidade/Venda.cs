@@ -5,7 +5,7 @@ namespace SistemVenda.Dominio.Entidade
 {
     public class Venda : EntityBase
     {
-        public int? Codigo { get; set; }
+    
         public DateTime Data { get; set; }
         public decimal Total { get; set; }
 

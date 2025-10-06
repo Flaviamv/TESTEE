@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Text;
-using Dominio.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Repositorio;
 using SistemVenda.Repositorio;
-using SistemVendas.Models;
+using SistemVenda.Dominio.DTO;
 
-namespace SistemVendas.Repositorio.Entidades
+
+namespace SistemVenda.Repositorio.Entidades
 {
     public class RepositorioVendaProduto : DbContext, IRepositorioVendaProdutos
     {

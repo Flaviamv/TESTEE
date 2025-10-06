@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SistemVenda.Dominio.Entidade;
-using SistemVendas.Dominio.DTO;
+using SistemVenda.Dominio.DTO;
 
 namespace SistemVenda.Dominio.Repositorio
 {
-    public interface IRepositorioVendaProdutos
+    public interface IRepositorioVendaProdutos 
     {
-        IEnumerable<GraficoViewModel> ListaGrafico();
+        public IEnumerable<GraficoViewModel> ListaGrafico();
     }
  
 }

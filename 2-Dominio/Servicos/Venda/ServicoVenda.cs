@@ -1,9 +1,12 @@
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Interfaces;
+using SistemVenda.Dominio.Repositorio;
+using SistemVenda.Dominio.DTO;
 using System;
 using System.Collections.Generic;
 
 
-namespace SistemVendas.Dominio.Servicos
+namespace SistemVenda.Dominio.Servicos
 {
     public class ServicoVenda : IServicosVenda
     {

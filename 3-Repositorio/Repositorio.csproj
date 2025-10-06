@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\2-Dominio\2-Dominio.csproj" />
+    <ProjectReference Include="..\2-Dominio\Dominio.csproj" />
   </ItemGroup>
 
   <ItemGroup>

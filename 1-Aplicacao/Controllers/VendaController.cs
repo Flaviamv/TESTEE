@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Aplicacao.Servico.Interfaces;
-using SistemVenda.AplicacaoAplicacao.Servico.Interfaces;
 using SistemVenda.Models;
 
 namespace SistemVenda.Controllers

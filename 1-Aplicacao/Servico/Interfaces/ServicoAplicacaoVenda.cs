@@ -1,6 +1,9 @@
 using Newtonsoft.Json;
-using SistemVenda.AplicacaoAplicacao.Servico.Interfaces;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 using SistemVenda.Controllers;
+using SistemVenda.Dominio.DTO;
+using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Interfaces;
 using SistemVenda.Models;
 using System;
 using System.Collections.Generic;
@@ -11,22 +14,22 @@ namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoVenda : IServicoAplicacaoVenda
     {
-        private readonly IServicoAplicacaoVenda _servicoVenda;
+        private readonly IServicosVenda _servicoVenda;
 
-        public ServicoAplicacaoVenda(IServicoAplicacaoVenda servicoVenda)
+        public ServicoAplicacaoVenda(IServicosVenda servicoVenda)
         {
             _servicoVenda = servicoVenda;
         }
 
         public void Cadastrar(VendaViewModel venda)
         {
-            VendaViewModel item = new VendaViewModel()
+            Venda item = new Venda()
             {
                 Codigo = venda.Codigo,
                 Data = (DateTime)venda.Data,
                 CodigoCliente = (int)venda.CodigoCliente,
                 Total = venda.Total,
-                Produto = JsonConvert.DeserializeObject<ICollection<VendaProduto>>(venda.JsonProdutos)
+                Produtos = JsonConvert.DeserializeObject<ICollection<VendaProduto>>(venda.JsonProdutos)
 
             };
 
@@ -73,21 +76,7 @@ namespace SistemVenda.Aplicacao.Servico
 
         public IEnumerable<GraficoViewModel> ListaGrafico()
         {
-            List<GraficoViewModel> lista = new List<GraficoViewModel>();
-
-            var auxLista = _servicoVenda.ListaGrafico();
-
-            foreach (var item in auxLista)
-            {
-                GraficoViewModel grafico = new GraficoViewModel()
-                {
-                    CodigoProduto = item.CodigoProduto,
-                    Descricao = item.Descricao,
-                    TotalVendido = item.TotalVendido
-                };
-                lista.Add(grafico);
-            }
-            return lista;
+            return _servicoVenda.ListaGrafico();
         }
     }
 

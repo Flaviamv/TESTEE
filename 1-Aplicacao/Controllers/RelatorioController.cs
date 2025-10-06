@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
-using SistemVenda.AplicacaoAplicacao.Servico.Interfaces;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 using SistemVenda.Repositorio;
 
 
@@ -23,8 +23,11 @@ namespace SistemVenda.Controllers
         public IActionResult Grafico()
         {
             var lista = ServicoVenda.ListaGrafico().ToList();
-
             var random = new Random();
+
+                string valores = "";
+                string labels = "";
+                string cores = "";
 
             for (int i = 0; i < lista.Count; i++)
             {
@@ -39,12 +42,5 @@ namespace SistemVenda.Controllers
 
             return View();
         }
-    }
-
-    public class GraficoViewModel
-    {
-        public int CodigoProduto { get; set; }
-        public string Descricao { get; set; }
-        public float TotalVendido { get; set; }
     }
 }

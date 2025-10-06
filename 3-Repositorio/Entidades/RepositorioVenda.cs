@@ -2,16 +2,16 @@ using System.Collections.ObjectModel;
 using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
-using Dominio.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Repositorio;
 
 
-namespace SistemVendas.Repositorio.Entidades 
+namespace SistemVenda.Repositorio.Entidades 
 {
     public class RepositorioVenda : Repositorio<Venda>, IRepositorioVenda
     {
-        public RepositorioVenda(DbContext dbContext) : base(dbContext)
+        public RepositorioVenda(ApplicationDbContext dbContext) : base(dbContext)
         {
 
         }

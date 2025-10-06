@@ -1,5 +1,5 @@
 using SistemVenda.Dominio.Entidade;
-using SistemVendas.Models;
+using SistemVenda.Dominio.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SistemVenda.Aplicacao.Servico.Interfaces;
+using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Interfaces;
 using SistemVenda.Models;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,9 @@ namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoCliente : IServicoAplicacaoCliente
     {
-        private readonly IServicoAplicacaoCliente _servicoCliente;
+        private readonly IServicosCliente _servicoCliente;
 
-        public ServicoAplicacaoCliente(IServicoAplicacaoCliente servicoCliente)
+        public ServicoAplicacaoCliente(IServicosCliente servicoCliente)
         {
             _servicoCliente = servicoCliente;
         }
@@ -53,7 +55,7 @@ namespace SistemVenda.Aplicacao.Servico
 
         public void Cadastrar(ClienteViewModel cliente)
         {
-            ClienteViewModel item = new ClienteViewModel()
+            Cliente item = new Cliente()
             {
                 Codigo = cliente.Codigo,
                 Nome = cliente.Nome,

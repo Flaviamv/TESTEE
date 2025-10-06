@@ -7,10 +7,6 @@ namespace SistemVenda.Dominio.Repositorio
 {
     public interface IRepositorioCategoria : IRepositorio<Categoria>
     {
-        void Delete(int id);
-
-        public IEnumerable<object> Read();
-        Categoria Read(int id);
-        void Create(Categoria categoria);
+    
     }
 }

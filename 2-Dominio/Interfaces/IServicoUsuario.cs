@@ -1,5 +1,6 @@
 using SistemVenda.Dominio.Repositorio;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Models;
 
 namespace SistemVenda.Dominio.Interfaces
 {

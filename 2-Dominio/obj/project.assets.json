@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj",
-      "projectName": "2-Dominio",
-      "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj",
+      "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/Dominio.csproj",
+      "projectName": "Dominio",
+      "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/Dominio.csproj",
       "packagesPath": "/Users/flavia-asa/.nuget/packages/",
       "outputPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/obj/",
       "projectStyle": "PackageReference",

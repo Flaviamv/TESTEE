@@ -2,7 +2,7 @@ using SistemVenda.Dominio.Entidade;
 using SistemVenda.Dominio.Interfaces;
 using SistemVenda.Dominio.Repositorio;
 
-namespace SistemVendas.Dominio.Servicos.categoria
+namespace SistemVenda.Dominio.Servicos
 {
     public class ServicoCategoria : IServicosCategoria
     {
@@ -29,9 +29,7 @@ namespace SistemVendas.Dominio.Servicos.categoria
 
         public IEnumerable<Categoria> Listagem()
         {
-
-           throw new NotImplementedException();
-
+           return RepositorioCategoria.Read();
 
         }
     }

@@ -2,6 +2,10 @@ using SistemVenda.Aplicacao.Servico;
 using SistemVenda.Aplicacao.Servico.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Repositorio;
+using SistemVenda.Dominio.Servicos;
+using SistemVenda.Dominio.Interfaces;
+using SistemVenda.Dominio.Repositorio;
+using SistemVenda.Repositorio.Entidades;
 
 
 public class Program
@@ -18,18 +22,18 @@ public class Program
             options.MinimumSameSitePolicy = SameSiteMode.None;
         });
 
-       builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
-       builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddDistributedMemoryCache();
 
-       builder.Services.AddSession(options =>
-       {
-          options.IdleTimeout = TimeSpan.FromMinutes(30);
-          options.Cookie.HttpOnly = true;
-          options.Cookie.IsEssential = true;
-       });
-        
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromMinutes(30);
+            options.Cookie.HttpOnly = true;
+            options.Cookie.IsEssential = true;
+        });
+
 
         var connectionString = builder.Configuration.GetConnectionString("MyStock");
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -45,11 +49,29 @@ public class Program
             o.JsonSerializerOptions.DictionaryKeyPolicy = null;
         });
 
+
+
+        // Aplicação
         builder.Services.AddScoped<IServicoAplicacaoCategoria, ServicoAplicacaoCategoria>();
-        builder.Services.AddScoped<IServicoAplicacaoUsuario, ServicoAplicacaoUsuario>();
         builder.Services.AddScoped<IServicoAplicacaoCliente, ServicoAplicacaoCliente>();
         builder.Services.AddScoped<IServicoAplicacaoProduto, ServicoAplicacaoProduto>();
         builder.Services.AddScoped<IServicoAplicacaoVenda, ServicoAplicacaoVenda>();
+        builder.Services.AddScoped<IServicoAplicacaoUsuario, ServicoAplicacaoUsuario>();
+
+        // Domínio
+        builder.Services.AddScoped<IServicosCategoria, ServicoCategoria>();
+        builder.Services.AddScoped<IServicosCliente, ServicoCliente>();
+        builder.Services.AddScoped<IServicosProduto, ServicoProduto>();
+        builder.Services.AddScoped<IServicosVenda, ServicoVenda>();
+        builder.Services.AddScoped<IServicoUsuario, ServicoUsuario>();
+
+        // Repositório
+        builder.Services.AddScoped<IRepositorioCategoria, RepositorioCategoria>();
+        builder.Services.AddScoped<IRepositorioCliente, RepositorioCliente>();
+        builder.Services.AddScoped<IRepositorioProduto, RepositorioProduto>();
+        builder.Services.AddScoped<IRepositorioVenda, RepositorioVenda>();
+        builder.Services.AddScoped<IRepositorioVendaProdutos, RepositorioVendaProduto>();
+        builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 
 
         builder.Services.AddMvc();

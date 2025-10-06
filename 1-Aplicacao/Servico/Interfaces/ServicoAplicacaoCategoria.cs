@@ -7,21 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Razor.Language;
 using SistemVenda.Aplicacao.Servico.Interfaces;
+using SistemVenda.Dominio.Interfaces;
+using SistemVenda.Dominio.Entidade;
 
 namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoCategoria : IServicoAplicacaoCategoria
     {
-        private readonly IServicoAplicacaoCategoria _servicoCategoria;
+        private readonly IServicosCategoria  _servicoCategoria;
 
-        public ServicoAplicacaoCategoria(IServicoAplicacaoCategoria servicoCategoria)
+        public ServicoAplicacaoCategoria(IServicosCategoria servicoCategoria)
         {
             _servicoCategoria = servicoCategoria;
         }
 
         public void Cadastrar(CategoriaViewModel categoria)
         {
-            CategoriaViewModel categoria1 = new CategoriaViewModel()
+            Categoria categoria1 = new Categoria()
             {
                 Codigo = categoria.Codigo,
                 Descricao = categoria.Descricao
@@ -31,17 +33,18 @@ namespace SistemVenda.Aplicacao.Servico
 
         }
 
-        public CategoriaViewModel CarregarRegistro(object codigoCategoria)
+        public CategoriaViewModel CarregarRegistro(int codigoCategoria)
         {
-            if (codigoCategoria == null) return new CategoriaViewModel();
+        
 
             var registro = _servicoCategoria.CarregarRegistro(codigoCategoria);
 
-            CategoriaViewModel categoria = new CategoriaViewModel()
+            CategoriaViewModel categoria = new CategoriaViewModel(); 
+            if (categoria != null)
             {
-                Codigo = registro.Codigo,
-                Descricao = registro.Descricao
-            };
+                categoria.Codigo = registro.Codigo;
+                categoria.Descricao = registro.Descricao;
+            }
 
             return categoria;
         }

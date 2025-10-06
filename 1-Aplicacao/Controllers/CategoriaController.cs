@@ -48,7 +48,7 @@ namespace SistemVenda.Controllers
                 return View(entidade);
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("index");
         }
 
         [HttpDelete]

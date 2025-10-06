@@ -7,9 +7,9 @@ namespace SistemVenda.Dominio.Repositorio
     public interface IRepositorio<TEntidade>
          where TEntidade : class
     {
-        void Create(TEntidade Entity);
-        TEntidade Read(int id);
-        void Delete(int id);
-        IEnumerable<TEntidade> Read();
+        public void Create(TEntidade Entity);
+        public TEntidade Read(int id);
+        public void Delete(int id);
+        public IEnumerable<TEntidade> Read();
     }
 }

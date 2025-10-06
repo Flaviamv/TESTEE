@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Dominio.Repositorio;
-using SistemVenda.Dominio.Entidade;
 using Microsoft.EntityFrameworkCore.Storage;
+using SistemVenda.Dominio.Entidade;
+using SistemVendas.Dominio.Repositorio;
 
-namespace SistemVendas.Repositorio
+namespace SistemVenda.Repositorio
 {
     public abstract class Repositorio<T> : IRepositorio<T>
     where T : EntityBase, new()

@@ -1,13 +1,13 @@
-using Dominio.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Repositorio;
 
 
-namespace SistemVendas.Repositorio.Entidades 
+namespace SistemVenda.Repositorio.Entidades 
 {
    public class RepositorioCliente : Repositorio<Cliente>, IRepositorioCliente
     {
-        public RepositorioCliente(DbContext dbContext) : base(dbContext) { }
+        public RepositorioCliente(ApplicationDbContext dbContext) : base(dbContext) { }
 
     
     }

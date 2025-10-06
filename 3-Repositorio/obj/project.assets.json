@@ -193,14 +193,14 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "2-Dominio/1.0.0": {
+      "Dominio/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/2-Dominio.dll": {}
+          "bin/placeholder/Dominio.dll": {}
         },
         "runtime": {
-          "bin/placeholder/2-Dominio.dll": {}
+          "bin/placeholder/Dominio.dll": {}
         }
       }
     }
@@ -541,15 +541,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "2-Dominio/1.0.0": {
+    "Dominio/1.0.0": {
       "type": "project",
-      "path": "../2-Dominio/2-Dominio.csproj",
-      "msbuildProject": "../2-Dominio/2-Dominio.csproj"
+      "path": "../2-Dominio/Dominio.csproj",
+      "msbuildProject": "../2-Dominio/Dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "2-Dominio >= 1.0.0",
+      "Dominio >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.9"
     ]
   },
@@ -559,9 +559,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj",
-      "projectName": "3-Repositorio",
-      "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj",
+      "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/Repositorio.csproj",
+      "projectName": "Repositorio",
+      "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/Repositorio.csproj",
       "packagesPath": "/Users/flavia-asa/.nuget/packages/",
       "outputPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/obj/",
       "projectStyle": "PackageReference",
@@ -578,8 +578,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj": {
-              "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj"
+            "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/Dominio.csproj": {
+              "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/Dominio.csproj"
             }
           }
         }

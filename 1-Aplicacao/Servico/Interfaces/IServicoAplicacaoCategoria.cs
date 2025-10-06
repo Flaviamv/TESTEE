@@ -12,7 +12,7 @@ namespace SistemVenda.Aplicacao.Servico.Interfaces
         IEnumerable<SelectListItem> ListaCategoriasDropDownList();
         public IEnumerable<CategoriaViewModel> Listagem();
         void Cadastrar(CategoriaViewModel entidade);
-        CategoriaViewModel CarregarRegistro(object codigoCategoria);
+        CategoriaViewModel CarregarRegistro(int codigoCategoria);
         void Excluir(int id);
     
 

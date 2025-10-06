@@ -1,7 +1,9 @@
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Interfaces;
+using SistemVenda.Dominio.Repositorio;
 
 
-namespace SistemVendas.Dominio.Servicos
+namespace SistemVenda.Dominio.Servicos
 {
     public class ServicoProduto : IServicosProduto
     {

@@ -1,9 +1,9 @@
-using Dominio.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Repositorio;
 using SistemVenda.Repositorio;
 
-namespace SistemVendas.Repositorio.Entidades 
+namespace SistemVenda.Repositorio.Entidades 
 {
     public class RepositorioProduto : Repositorio<Produto>, IRepositorioProduto
     {

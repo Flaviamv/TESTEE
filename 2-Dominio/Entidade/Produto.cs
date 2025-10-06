@@ -1,11 +1,11 @@
 
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace SistemVenda.Dominio.Entidade
 {
     public class Produto : EntityBase
    {
-        public int? Codigo { get; set; }
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
         public float Quantidade { get; set; }

@@ -994,28 +994,28 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "2-Dominio/1.0.0": {
+      "Dominio/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/2-Dominio.dll": {}
+          "bin/placeholder/Dominio.dll": {}
         },
         "runtime": {
-          "bin/placeholder/2-Dominio.dll": {}
+          "bin/placeholder/Dominio.dll": {}
         }
       },
-      "3-Repositorio/1.0.0": {
+      "Repositorio/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "2-Dominio": "1.0.0",
+          "Dominio": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.9"
         },
         "compile": {
-          "bin/placeholder/3-Repositorio.dll": {}
+          "bin/placeholder/Repositorio.dll": {}
         },
         "runtime": {
-          "bin/placeholder/3-Repositorio.dll": {}
+          "bin/placeholder/Repositorio.dll": {}
         }
       }
     }
@@ -3006,27 +3006,28 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "2-Dominio/1.0.0": {
+    "Dominio/1.0.0": {
       "type": "project",
-      "path": "../2-Dominio/2-Dominio.csproj",
-      "msbuildProject": "../2-Dominio/2-Dominio.csproj"
+      "path": "../2-Dominio/Dominio.csproj",
+      "msbuildProject": "../2-Dominio/Dominio.csproj"
     },
-    "3-Repositorio/1.0.0": {
+    "Repositorio/1.0.0": {
       "type": "project",
-      "path": "../3-Repositorio/3-Repositorio.csproj",
-      "msbuildProject": "../3-Repositorio/3-Repositorio.csproj"
+      "path": "../3-Repositorio/Repositorio.csproj",
+      "msbuildProject": "../3-Repositorio/Repositorio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "3-Repositorio >= 1.0.0",
+      "Dominio >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 9.0.9",
       "Microsoft.EntityFrameworkCore >= 9.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.9",
       "Microsoft.EntityFrameworkCore.Relational >= 9.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.9",
       "Newtonsoft.Json >= 13.0.4",
-      "Pomelo.EntityFrameworkCore.MySql >= 9.0.0"
+      "Pomelo.EntityFrameworkCore.MySql >= 9.0.0",
+      "Repositorio >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3054,8 +3055,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj": {
-              "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj"
+            "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/Dominio.csproj": {
+              "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/Dominio.csproj"
+            },
+            "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/Repositorio.csproj": {
+              "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/Repositorio.csproj"
             }
           }
         }

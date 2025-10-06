@@ -5,15 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SistemVenda.Aplicacao.Servico.Interfaces;
+using SistemVenda.Dominio.Interfaces;
+using SistemVenda.Dominio.Servicos;
+using SistemVenda.Dominio.Entidade;
 
 
 namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoProduto : IServicoAplicacaoProduto
     {
-        private readonly IServicoAplicacaoProduto _servicoProduto;
+        private readonly IServicosProduto _servicoProduto;
 
-        public ServicoAplicacaoProduto(IServicoAplicacaoProduto servicoProduto)
+        public ServicoAplicacaoProduto(IServicosProduto servicoProduto)
         {
             _servicoProduto = servicoProduto;
         }
@@ -39,11 +42,11 @@ namespace SistemVenda.Aplicacao.Servico
 
         public void Cadastrar(ProdutoViewModel produto)
         {
-            ProdutoViewModel produto1 = new ProdutoViewModel()
+            Produto produto1 = new Produto()
             {
                 Codigo = produto.Codigo,
                 Descricao = produto.Descricao,
-                Quantidade = produto.Quantidade,
+                Quantidade = (int)produto.Quantidade,
                 Valor = (decimal)produto.Valor,
                 CodigoCategoria = (int)produto.CodigoCategoria
             };
@@ -52,9 +55,9 @@ namespace SistemVenda.Aplicacao.Servico
 
         }
 
-        public ProdutoViewModel CarregarRegistro(object codigoProduto)
+        public ProdutoViewModel CarregarRegistro(int codigoProduto)
         {
-            if (codigoProduto == null) return new ProdutoViewModel();
+            if (codigoProduto == 0) return new ProdutoViewModel();
 
             var registro = _servicoProduto.CarregarRegistro(codigoProduto);
 
