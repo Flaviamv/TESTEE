@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dominio.Repositorio
+namespace SistemVenda.Dominio.Repositorio
 {
     public interface IRepositorio<TEntidade>
          where TEntidade : class

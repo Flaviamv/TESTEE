@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SistemVenda.Dominio.Entidade;
 
 
-namespace Repositorio.Entidades 
+namespace SistemVendas.Repositorio.Entidades 
 {
    public class RepositorioCliente : Repositorio<Cliente>, IRepositorioCliente
     {

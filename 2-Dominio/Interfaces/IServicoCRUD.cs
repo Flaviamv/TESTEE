@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dominio.Interfaces
+namespace SistemVenda.Dominio.Interfaces
 {
     public interface IServicoCRUD<TEntidade>
     where TEntidade : class

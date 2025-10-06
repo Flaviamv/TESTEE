@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using SistemVenda.Dominio.Entidade;
 
-namespace Dominio.Repositorio
+namespace SistemVenda.Dominio.Repositorio
 {
-    public interface IRepositorioCliente : IRepositorio<Categoria>
+    public interface IRepositorioCliente : IRepositorio<Cliente>
     {
     }
 }

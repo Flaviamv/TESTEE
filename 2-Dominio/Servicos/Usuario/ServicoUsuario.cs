@@ -1,11 +1,8 @@
-using Dominio.Interfaces;
-using Dominio.Repositorio;
-using Repositorio.Entidades;
 using SistemVenda.Dominio.Entidade;
 
-namespace Dominio.Servicos.ServicoUsuario
+namespace SistemVendas.Dominio.Servicos
 {
-    public class ServicoUsuario : IServicosUsuario
+    public class ServicoUsuario : IServicoUsuario
     {
         IRepositorioUsuario RepositorioUsuario;
         public ServicoUsuario(IRepositorioUsuario repositorioUsuario) //construtor
@@ -30,17 +27,13 @@ namespace Dominio.Servicos.ServicoUsuario
 
         public IEnumerable<Usuario> Listagem()
         {
-            throw new NotImplementedException();
+            return RepositorioUsuario.Read();
         }
 
         public bool ValidarLogin(string email, string senha)
         {
             return RepositorioUsuario.ValidarLogin(email, senha);
         }
-    }
-
-    public interface IServicosUsuario
-    {
     }
 
 }

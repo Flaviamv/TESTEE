@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SistemVendas.Models
+namespace SistemVendas.Dominio.DTO
 {
     public class GraficoViewModel
     {

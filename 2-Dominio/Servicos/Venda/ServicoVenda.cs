@@ -1,49 +1,48 @@
-using Dominio.Interfaces;
-using Dominio.Repositorio;
 using SistemVenda.Dominio.Entidade;
-using SistemVendas.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Dominio.Servicos
+
+namespace SistemVendas.Dominio.Servicos
 {
     public class ServicoVenda : IServicosVenda
     {
-        IServicosVenda _servicosCliente;
-        private IServicosVenda _servicosVenda;
+        IRepositorioVenda RepositorioVenda;
+        IRepositorioVendaProdutos RepositorioVendaProdutos;
 
-        public ServicoVenda(IServicosVenda servicosVenda,
-        IRepositorioVendaProdutos RepositorioVendaProduto)
+        public ServicoVenda(IRepositorioVenda repositorioVenda,
+        IRepositorioVendaProdutos repositorioVendaProduto)
         {
-            _servicosVenda = servicosVenda;
+            RepositorioVenda = repositorioVenda;
+            RepositorioVendaProdutos = repositorioVendaProduto;
         }
     
 
         public void Cadastrar(Venda venda)
         {
-            _servicosVenda.Cadastrar(venda);
+            RepositorioVenda.Create(venda);
         }
 
         public Venda CarregarRegistro(int id)
         {
-            return _servicosVenda.CarregarRegistro(id);
+            return RepositorioVenda.Read(id);
         }
 
         public void Excluir(int id)
         {
-            _servicosVenda.Excluir(id);
+            RepositorioVenda.Delete(id);
         }
 
         public IEnumerable<Venda> Listagem()
         {
 
-           throw new NotImplementedException();
+           return RepositorioVenda.Read();
 
         }
 
         public IEnumerable<GraficoViewModel> ListaGrafico()
         {
-            return RepositorioVendaProduto.ListaGrafico();
+            return RepositorioVendaProdutos.ListaGrafico();
         }
     }
 }

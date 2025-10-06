@@ -1,10 +1,8 @@
-using Dominio.Interfaces;
-using Dominio.Repositorio;
 using SistemVenda.Dominio.Entidade;
 using System;
 using System.Collections.Generic;
 
-namespace Dominio.Servicos
+namespace SistemVendas.Dominio.Servicos
 {
     public class ServicoCliente : IServicosCliente
     {

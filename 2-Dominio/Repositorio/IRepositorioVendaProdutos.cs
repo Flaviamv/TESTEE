@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SistemVenda.Dominio.Entidade;
-using SistemVendas.Models;
+using SistemVendas.Dominio.DTO;
 
-namespace Dominio.Repositorio
+namespace SistemVenda.Dominio.Repositorio
 {
     public interface IRepositorioVendaProdutos
     {

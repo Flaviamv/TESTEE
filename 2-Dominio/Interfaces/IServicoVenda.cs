@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dominio.Interfaces
+namespace SistemVenda.Dominio.Interfaces
 {
     public interface IServicosVenda : IServicoCRUD<Venda>
     {

@@ -1,8 +1,8 @@
-using Dominio.Interfaces;
-using Dominio.Repositorio;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Dominio.Interfaces;
+using SistemVenda.Dominio.Repositorio;
 
-namespace Dominio.Servicos.categoria
+namespace SistemVendas.Dominio.Servicos.categoria
 {
     public class ServicoCategoria : IServicosCategoria
     {

@@ -6,7 +6,7 @@ using Dominio.Repositorio;
 using SistemVenda.Dominio.Entidade;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Repositorio
+namespace SistemVendas.Repositorio
 {
     public abstract class Repositorio<T> : IRepositorio<T>
     where T : EntityBase, new()

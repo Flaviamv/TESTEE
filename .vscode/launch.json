@@ -9,7 +9,7 @@
       "program": "dotnet",
       "args": [
         "run",
-        "--project", "${workspaceFolder}/1-Aplicacao/SistemVenda.csproj",
+        "--project", "${workspaceFolder}/1-Aplicacao/Aplicacao.csproj",
         "--launch-profile", "https"
       ],
       "cwd": "${workspaceFolder}/1-Aplicacao",

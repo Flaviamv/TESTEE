@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SistemVenda.Dominio.Entidade;
 
-namespace Dominio.Repositorio
+namespace SistemVenda.Dominio.Repositorio
 {
     public interface IRepositorioCategoria : IRepositorio<Categoria>
     {

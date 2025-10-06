@@ -1,36 +1,33 @@
-using Dominio.Interfaces;
-using Dominio.Repositorio;
 using SistemVenda.Dominio.Entidade;
 
 
-namespace Dominio.Servicos.Produto
+namespace SistemVendas.Dominio.Servicos
 {
     public class ServicoProduto : IServicosProduto
     {
         IRepositorioProduto RepositorioProduto;
-        public ServicoProduto(IServicosProduto repositorioProduto)
+        public ServicoProduto(IRepositorioProduto repositorioProduto)
         {
-            RepositorioProduto= repositorioProduto;
+            RepositorioProduto = repositorioProduto;
         }
 
         public void Cadastrar(Produto produto)
         {
-            RepositorioProduto.Cadastrar(produto);
+            RepositorioProduto.Create(produto);
         }
 
         public Produto CarregarRegistro(int id)
         {
-            return RepositorioProduto.CarregarRegistro(id);
+            return RepositorioProduto.Read(id);
         }
 
         public void Excluir(int id)
         {
-            RepositorioProduto.Excluir(id);
+            RepositorioProduto.Delete(id);
         }
 
         public IEnumerable<Produto> Listagem()
         {
-
             return RepositorioProduto.Read();
         }
     }
