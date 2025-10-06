@@ -1,158 +1,92 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Aplicacao.Servico;
+using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Newtonsoft.Json;
-using SistemVenda.DAL;
+using Microsoft.EntityFrameworkCore;
+using SistemVenda.Dominio.Entidade;
+
 using SistemVenda.Entidade;
 using SistemVenda.Models;
-using Newtonsoft.Json;
-using Microsoft.EntityFrameworkCore;
 
 namespace SistemVenda.Controllers
 {
-    [Route("Venda")]
     public class VendaController : Controller
     {
-        protected DAL.ApplicationDbContext mContext;
 
-        public VendaController(ApplicationDbContext context)
+        readonly IServicoAplicacaoProduto ServicoAplicacaoProduto;
+        readonly IServicoAplicacaoCliente ServicoAplicacaoCliente;
+        readonly IServicoAplicacaoVenda ServicoAplicacaoVenda;
+
+
+        public VendaController(
+
+                IServicoAplicacaoVenda servicoAplicacaoVenda,
+                IServicoAplicacaoProduto servicoAplicacaoProduto,
+                IServicoAplicacaoCliente servicoAplicacaoCliente)
         {
-            mContext = context;
+            ServicoAplicacaoVenda = servicoAplicacaoVenda;
+            ServicoAplicacaoProduto = servicoAplicacaoProduto;
+            ServicoAplicacaoCliente = servicoAplicacaoCliente;
         }
 
-        [HttpGet("Index")]
+
         public IActionResult Index()
         {
-            List<Venda> lista = mContext.Venda.ToList();
-            mContext.Dispose();
-            return View(lista);
+            return View(ServicoAplicacaoVenda.Listagem());
         }
 
-        [HttpGet("Listaprodutos")]
-        private IEnumerable<SelectListItem> ListaProdutos()
-        {
-            List<SelectListItem> lista = new List<SelectListItem>();
-
-            lista.Add(new SelectListItem()
-            {
-                Value = string.Empty,
-                Text = string.Empty
-            });
-
-            foreach (var item in mContext.Produto.ToList())
-            {
-
-                lista.Add(new SelectListItem()
-                {
-                    Value = item.Codigo.ToString(),
-                    Text = item.Descricao.ToString()
-                });
-            }
-
-            return lista;
-        }
-
-        [HttpGet("ListaClientes")]
-        private IEnumerable<SelectListItem> ListaClientes()
-        {
-            List<SelectListItem> lista = new List<SelectListItem>();
-
-            lista.Add(new SelectListItem()
-            {
-                Value = string.Empty,
-                Text = string.Empty
-            });
-
-            foreach (var item in mContext.Cliente.ToList())
-            {
-
-                lista.Add(new SelectListItem()
-                {
-                    Value = item.Codigo.ToString(),
-                    Text = item.Nome.ToString()
-                });
-            }
-
-            return lista;
-        }
-
-        [HttpGet("Cadastro/{id?}")]
+        [HttpGet]
         public IActionResult Cadastro(int? id)
         {
             VendaViewModel viewModel = new VendaViewModel();
-            viewModel.ListaClientes = ListaClientes();
-            viewModel.ListaProdutos = ListaProdutos();
 
             if (id != null)
             {
-                var entidade = mContext.Venda.Where(x => x.Codigo == id).FirstOrDefault();
-                viewModel.Codigo = entidade.Codigo;
-                viewModel.Data = entidade.Data;
-                viewModel.CodigoCliente = entidade.CodigoCliente;
-                viewModel.Total = entidade.Total;
-
+                viewModel = ServicoAplicacaoVenda.CarregarRegistro((int)id);
             }
+
+            // ProdutoViewModel viewModel = new ProdutoViewModel();
+            viewModel.ListaClientes = ServicoAplicacaoCliente.ListaClienteDropDownList();
+            viewModel.ListaProdutos = ServicoAplicacaoProduto.ListaProdutoDropDownList();
 
             return View(viewModel);
         }
 
-        [HttpPost("Cadastro")]
-        public IActionResult Cadastro([FromBody] VendaViewModel entidade)
+        [HttpPost]
+        public IActionResult Cadastro(VendaViewModel entidade)
         {
             if (ModelState.IsValid)
             {
-                Venda objVenda = new Venda()
-                {
-                    Codigo = entidade.Codigo,
-                    Data = (DateTime)entidade.Data,
-                    CodigoCliente = (int)entidade.CodigoCliente,
-                    Total = (decimal)entidade.Total,
-                    Produtos = JsonConvert.DeserializeObject<ICollection<VendaProduto>>(entidade.JsonProdutos)
-                };
-
-                if (entidade.Codigo == null)
-                {
-                    mContext.Venda.Add(objVenda);
-                }
-                else
-                {
-                    mContext.Entry(objVenda).State = EntityState.Modified;
+                    ServicoAplicacaoVenda.Cadastrar(entidade);
                 }
 
-                mContext.SaveChanges();
-            }
             else
+                    {
+
+                        entidade.ListaClientes = ServicoAplicacaoCliente.ListaClienteDropDownList();
+                        entidade.ListaProdutos = ServicoAplicacaoProduto.ListaProdutoDropDownList();
+                        return View(entidade);
+                    }
+                return RedirectToAction("Index");
+            }
+        [HttpDelete]
+            public IActionResult Excluir([FromRoute] int id)
             {
-                entidade.ListaClientes = ListaClientes();
-                entidade.ListaProdutos = ListaProdutos();
-                return View(entidade);
+                ServicoAplicacaoVenda.Excluir(id);
+                return RedirectToAction("Index");
+
             }
 
-            return RedirectToAction("Index");
-        }
+            [HttpGet("LerValorProduto/{codigo}")]
 
-        [HttpGet("Excluir/{id}")]
-        public IActionResult Excluir([FromRoute] int id)
-        {
-            var ent = new Venda() { Codigo = id };
-            mContext.Attach(ent);
-            mContext.Remove(ent);
-            mContext.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet("LerValorProduto/{CodigoProduto}")]
-        public IActionResult LerValorProduto([FromRoute] int CodigoProduto)
-        {
-            var request = HttpContext.Request;
-            var obj = mContext.Produto.Where(x => x.Codigo == CodigoProduto).Take(1).FirstOrDefault();
-            var valor = obj?.Valor;
-
-            return Json(new ApiResponse<decimal>(valor ?? 0));
-        }
-
+            public decimal LarValorProduto(int CodigoProduto)
+            {
+                return (decimal)ServicoAplicacaoProduto.CarregarRegistro(CodigoProduto).Valor;
+            }
     }
 }

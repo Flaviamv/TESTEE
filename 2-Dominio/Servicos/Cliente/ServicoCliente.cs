@@ -8,25 +8,26 @@ namespace Dominio.Servicos
 {
     public class ServicoCliente : IServicosCliente
     {
-        IRepositorioCliente RepositorioCliente;
-        public ServicoCliente(IRepositorioCliente repositorioCliente)
+        IServicosCliente _servicosCliente;
+        public ServicoCliente(IServicosCliente servicosCliente)
         {
-            RepositorioCliente = repositorioCliente;
+            _servicosCliente = servicosCliente;
         }
+    
 
-        public void Cadastrar(Categoria cliente)
+        public void Cadastrar(Cliente cliente)
         {
-            RepositorioCliente.Create(cliente);
+            _servicosCliente.Cadastrar(cliente);
         }
 
         public Cliente CarregarRegistro(int id)
         {
-            return RepositorioCliente.Read(id);
+            return _servicosCliente.CarregarRegistro(id);
         }
 
         public void Excluir(int id)
         {
-            RepositorioCliente.Delete(id);
+            _servicosCliente.Excluir(id);
         }
 
         public IEnumerable<Cliente> Listagem()

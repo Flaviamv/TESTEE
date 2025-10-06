@@ -37,7 +37,7 @@ namespace Repositorio
         }
 
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             var entity = _dbSet.Find(id);
             if (entity != null)

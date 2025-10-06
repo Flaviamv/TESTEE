@@ -7,5 +7,6 @@ namespace Dominio.Repositorio
 {
     public interface IRepositorioproduto : IRepositorio<Produto>
     {
+         IEnumerable<Produto> Read();
     }
 }

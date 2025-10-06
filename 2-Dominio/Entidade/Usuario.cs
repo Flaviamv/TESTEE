@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SistemVenda.Dominio.Entidade
 {
-    public class Usuario
+    public class Usuario : EntityBase
     {
         [Key]
         public int? Codigo { get; set; }

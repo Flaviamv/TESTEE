@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using SistemVenda.Entidade;
 
 namespace SistemVenda.Models
 {
@@ -23,7 +24,7 @@ namespace SistemVenda.Models
 
         public string JsonProdutos { get; set; }
 
-
+        public ICollection<VendaProduto> Produto { get; set; }
         public decimal Total { get; set; }
 
     }

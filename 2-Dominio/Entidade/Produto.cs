@@ -1,11 +1,10 @@
-using System.ComponentModel.DataAnnotations;
+
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemVenda.Dominio.Entidade
 {
-    public class Produto
-    {
-        [Key]
+    public class Produto : EntityBase
+   {
         public int? Codigo { get; set; }
         public string Descricao { get; set; }
         public decimal Valor { get; set; }

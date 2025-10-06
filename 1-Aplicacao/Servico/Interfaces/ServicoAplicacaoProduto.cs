@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using SistemVenda.Entidade;
 using SistemVenda.Dominio.Entidade;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Aplicacao.Servico.Interfaces;
 
 namespace Aplicacao.Servico
 {
@@ -16,6 +18,23 @@ namespace Aplicacao.Servico
         public ServicoAplicacaoProduto(IServicoAplicacaoProduto servicoProduto)
         {
             _servicoProduto = servicoProduto;
+        }
+
+        public IEnumerable<SelectListItem> ListaProdutoDropDownList()
+        {
+            var lista = _servicoProduto.Listagem();
+
+            foreach (var item in lista)
+            {
+                SelectListItem produto = new SelectListItem()
+                {
+                    Value = item.Codigo.ToString(),
+                    Text = item.Descricao
+                };
+                lista.Add(produto);
+            }
+
+            return lista;
         }
 
         public void Cadastrar(ProdutoViewModel produto)
@@ -65,11 +84,11 @@ namespace Aplicacao.Servico
             {
                 ProdutoViewModel produto = new ProdutoViewModel()
                 {
-                    Codigo = item.Codigo,
-                    Descricao = item.Descricao,
-                    Quantidade = item.Quantidade,
-                    Valor = (decimal)item.Valor,
-                    CodigoCategoria = (int)item.CodigoCategoria
+                    Codigo = produto.Codigo,
+                    Descricao = produto.Descricao,
+                    Quantidade = produto.Quantidade,
+                    Valor = (decimal)produto.Valor,
+                    CodigoCategoria = (int)produto.CodigoCategoria
                 };
                 listaProduto.Add(produto);
             }

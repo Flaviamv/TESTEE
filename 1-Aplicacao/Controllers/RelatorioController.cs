@@ -3,35 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
-using SistemVenda.DAL;
-using SistemVendas.Models;
+using SistemVenda.Repositorio;
+
 
 namespace SistemVenda.Controllers
 {
     public class RelatorioController : Controller
     {
+        readonly IServicoAplicacaoVenda ServicoVenda;
         protected ApplicationDbContext mContext;
 
-        public RelatorioController(ApplicationDbContext context)
+        public RelatorioController(IServicoAplicacaoVenda servicoVenda)
         {
-            mContext = context;
+            ServicoVenda = servicoVenda;
         }
         public IActionResult Grafico()
         {
-            var lista = mContext.VendaProduto
-             .GroupBy(x => x.CodigoProduto)
-             .Select(y => new GraficoViewModel
-             {
-                 CodigoProduto = y.First().CodigoProduto,
-                 Descricao = y.First().Produto.Descricao,
-                 TotalVendido = y.Sum(z => z.QuantidadeProduto)
-             }).ToList();
-
-            string valores = string.Empty;
-            string labels = string.Empty;
-            string cores = string.Empty;
+            var lista = ServicoVenda.ListaGrafico().ToList();
 
             var random = new Random();
 
@@ -48,5 +39,12 @@ namespace SistemVenda.Controllers
 
             return View();
         }
+    }
+
+    public class GraficoViewModel
+    {
+        public int CodigoProduto { get; set; }
+        public string Descricao { get; set; }
+        public float TotalVendido { get; set; }
     }
 }

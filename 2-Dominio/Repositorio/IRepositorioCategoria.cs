@@ -13,8 +13,4 @@ namespace Dominio.Repositorio
         Categoria Read(int id);
         void Create(Categoria categoria);
     }
-
-    public interface IRepositorio<T>
-    {
-    }
 }

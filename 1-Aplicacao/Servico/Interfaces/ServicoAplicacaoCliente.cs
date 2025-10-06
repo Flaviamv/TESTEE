@@ -1,7 +1,10 @@
+using Aplicacao.Servico.Interfaces;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SistemVenda.Dominio.Entidade;
+using SistemVenda.Entidade;
+using SistemVenda.Models;
 using System;
 using System.Collections.Generic;
-using Dominio.Interfaces;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,16 +12,50 @@ namespace Aplicacao.Servico
 {
     public class ServicoAplicacaoCliente : IServicoAplicacaoCliente
     {
-        private readonly IServicoCliente _servicoCliente;
+        private readonly IServicoAplicacaoCliente _servicoCliente;
 
-        public ServicoAplicacaoCliente(IServicoCliente servicoCliente)
+        public ServicoAplicacaoCliente(IServicoAplicacaoCliente servicoCliente)
         {
             _servicoCliente = servicoCliente;
         }
 
+        public IEnumerable<SelectListItem> ListaClienteDropDownList()
+        {
+            List<SelectListItem> retorno = new List<SelectListItem>();
+            var lista = this.Listagem();
+
+            foreach (var item in lista)
+            {
+                SelectListItem cliente = new SelectListItem()
+                {
+                    Value = item.Codigo.ToString(),
+                    Text = item.Nome
+                };
+                retorno.Add(cliente);
+            }
+            return retorno;
+        }
+
+        public IEnumerable<ClienteViewModel> ListaClientesDropDownList()
+        {
+            var lista = this.Listagem();
+            List<ClienteViewModel> retorno = new List<ClienteViewModel>();
+
+            foreach (var item in lista)
+            {
+                ClienteViewModel cliente = new ClienteViewModel()
+                {
+                    Codigo = item.Codigo,
+                    Nome = item.Nome
+                };
+                retorno.Add(cliente);
+            }
+            return retorno;
+        }
+
         public void Cadastrar(ClienteViewModel cliente)
         {
-            Cliente item = new Cliente()
+            ClienteViewModel item = new ClienteViewModel()
             {
                 Codigo = cliente.Codigo,
                 Nome = cliente.Nome,
@@ -30,7 +67,7 @@ namespace Aplicacao.Servico
             _servicoCliente.Cadastrar(item);
         }
 
-        public ClienteViewModel CarregarRegistro(int codigoClidente)
+        public ClienteViewModel CarregarRegistro(int codigoCliente)
         {
             var registro = _servicoCliente.CarregarRegistro(codigoCliente);
 
@@ -50,7 +87,7 @@ namespace Aplicacao.Servico
             _servicoCliente.Excluir(codigoCliente);
         }
 
-        public IEnumerable<ClienteViewModel> Listagem()
+        public List<ClienteViewModel> Listagem()
         {
             var lista = _servicoCliente.Listagem();
 

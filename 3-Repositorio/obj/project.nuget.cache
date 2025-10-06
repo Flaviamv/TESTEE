@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SsxLYScsHQ8=",
+  "dgSpecHash": "61Dukpq0Gek=",
   "success": true,
-  "projectFilePath": "/Users/flavia-asa/Documents/SistemVenda/3-Repositorio/3-Repositorio.csproj",
+  "projectFilePath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj",
   "expectedPackageFiles": [
     "/Users/flavia-asa/.nuget/packages/microsoft.entityframeworkcore/9.0.9/microsoft.entityframeworkcore.9.0.9.nupkg.sha512",
     "/Users/flavia-asa/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.9/microsoft.entityframeworkcore.abstractions.9.0.9.nupkg.sha512",

@@ -1,8 +1,6 @@
 using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
-using SistemVenda.DAL;
-
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
@@ -57,7 +55,7 @@ internal class Program
 
         app.UseCookiePolicy();
         app.UseSession();
-
+        app.UseStaticFiles();
         app.UseHttpsRedirection();
 
         app.UseRouting();

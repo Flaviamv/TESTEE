@@ -6,7 +6,6 @@ using Aplicacao.Servico;
 using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SistemVenda.DAL;
 using SistemVenda.Entidade;
 using SistemVenda.Models;
 

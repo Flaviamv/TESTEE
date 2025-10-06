@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj": {}
+    "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj": {}
   },
   "projects": {
-    "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj": {
+    "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj",
+        "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj",
         "projectName": "2-Dominio",
-        "projectPath": "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj",
+        "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj",
         "packagesPath": "/Users/flavia-asa/.nuget/packages/",
-        "outputPath": "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/obj/",
+        "outputPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/flavia-asa/.nuget/NuGet/NuGet.Config"

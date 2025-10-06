@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/flavia-asa/Documents/SistemVenda/3-Repositorio/3-Repositorio.csproj": {}
+    "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj": {}
   },
   "projects": {
-    "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj": {
+    "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj",
+        "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj",
         "projectName": "2-Dominio",
-        "projectPath": "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj",
+        "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj",
         "packagesPath": "/Users/flavia-asa/.nuget/packages/",
-        "outputPath": "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/obj/",
+        "outputPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/flavia-asa/.nuget/NuGet/NuGet.Config"
@@ -63,14 +63,14 @@
         }
       }
     },
-    "/Users/flavia-asa/Documents/SistemVenda/3-Repositorio/3-Repositorio.csproj": {
+    "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/flavia-asa/Documents/SistemVenda/3-Repositorio/3-Repositorio.csproj",
+        "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj",
         "projectName": "3-Repositorio",
-        "projectPath": "/Users/flavia-asa/Documents/SistemVenda/3-Repositorio/3-Repositorio.csproj",
+        "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj",
         "packagesPath": "/Users/flavia-asa/.nuget/packages/",
-        "outputPath": "/Users/flavia-asa/Documents/SistemVenda/3-Repositorio/obj/",
+        "outputPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/flavia-asa/.nuget/NuGet/NuGet.Config"
@@ -85,8 +85,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj": {
-                "projectPath": "/Users/flavia-asa/Documents/SistemVenda/2-Dominio/2-Dominio.csproj"
+              "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj": {
+                "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/2-Dominio/2-Dominio.csproj"
               }
             }
           }

@@ -993,6 +993,30 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "2-Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/2-Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/2-Dominio.dll": {}
+        }
+      },
+      "3-Repositorio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "2-Dominio": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.9"
+        },
+        "compile": {
+          "bin/placeholder/3-Repositorio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/3-Repositorio.dll": {}
+        }
       }
     }
   },
@@ -2981,10 +3005,21 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "2-Dominio/1.0.0": {
+      "type": "project",
+      "path": "../2-Dominio/2-Dominio.csproj",
+      "msbuildProject": "../2-Dominio/2-Dominio.csproj"
+    },
+    "3-Repositorio/1.0.0": {
+      "type": "project",
+      "path": "../3-Repositorio/3-Repositorio.csproj",
+      "msbuildProject": "../3-Repositorio/3-Repositorio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "3-Repositorio >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 9.0.9",
       "Microsoft.EntityFrameworkCore >= 9.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.9",
@@ -3000,11 +3035,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj",
-      "projectName": "SistemVenda",
-      "projectPath": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj",
+      "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/Aplicacao.csproj",
+      "projectName": "Aplicacao",
+      "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/Aplicacao.csproj",
       "packagesPath": "/Users/flavia-asa/.nuget/packages/",
-      "outputPath": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/obj/",
+      "outputPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/flavia-asa/.nuget/NuGet/NuGet.Config"
@@ -3018,7 +3053,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj": {
+              "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/3-Repositorio/3-Repositorio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

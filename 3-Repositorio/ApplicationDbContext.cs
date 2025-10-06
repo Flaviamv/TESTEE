@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SistemVenda.Dominio.Entidade;
 
-namespace _3_Repositorio.Entidades
+namespace SistemVenda.Repositorio
 {
     public class ApplicationDbContext : DbContext
     {
@@ -12,8 +12,7 @@ namespace _3_Repositorio.Entidades
         public DbSet<Venda> Venda { get; set; }
         public DbSet<VendaProduto> VendaProduto { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-
-         protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.Entity<VendaProduto>().HasKey(x => new { x.CodigoVenda, x.CodigoProduto });

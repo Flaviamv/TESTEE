@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj": {}
+    "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/SistemVenda.csproj": {}
   },
   "projects": {
-    "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj": {
+    "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/SistemVenda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj",
+        "projectUniqueName": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/SistemVenda.csproj",
         "projectName": "SistemVenda",
-        "projectPath": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj",
+        "projectPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/SistemVenda.csproj",
         "packagesPath": "/Users/flavia-asa/.nuget/packages/",
-        "outputPath": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/obj/",
+        "outputPath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/flavia-asa/.nuget/NuGet/NuGet.Config"

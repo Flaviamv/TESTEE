@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using Aplicacao.Servico;
+using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using SistemVenda.DAL;
 using SistemVenda.Helpers;
 using SistemVenda.Models;
 
@@ -13,13 +14,12 @@ namespace SistemVenda.Controllers
 {
     public class LoginController : Controller
     {
+         protected IHttpContextAccessor HttpContextAcessor;
+        readonly IServicoAplicacaoUsuario ServicoAplicacaoUsuario;
 
-        protected ApplicationDbContext mContext;
-        protected IHttpContextAccessor HttpContextAcessor;
-
-        public LoginController(ApplicationDbContext context, IHttpContextAccessor httpContext)
+        public LoginController(IServicoAplicacaoUsuario servicoAplicacaoUsuario, IHttpContextAccessor httpContext)
         {
-            mContext = context;
+            ServicoAplicacaoUsuario = servicoAplicacaoUsuario;
             HttpContextAcessor = httpContext;
         }
 
@@ -45,31 +45,33 @@ namespace SistemVenda.Controllers
             if (ModelState.IsValid)  //verificacao se esta valido
             {
                 var Senha = Criptografia.GetMd5Hash(model.Senha);
-                var usuario = mContext.Usuario.Where(x => x.Email == model.Email && x.Senha == Senha).FirstOrDefault();
 
-                if (usuario == null)
-                {
+                bool login = ServicoAplicacaoUsuario.ValidarLogin(model.Email, Senha);
 
-                    ViewData["ErroLogin"] = "O Email ou senha informado não existe no sistema!";
-                    return View(model);
-                }
+                var Usuario = ServicoAplicacaoUsuario.RetornarDadosUsuario(model.Email, Senha);
 
-                else
+                if (login)
                 {
                     //colocar os dados do usuario na sessao
-                    HttpContextAcessor.HttpContext.Session.SetString(Sessao.NOME_USUARIO, usuario.Nome);
-                    HttpContextAcessor.HttpContext.Session.SetString(Sessao.EMAIL_USUARIO, usuario.Email);
-                    HttpContextAcessor.HttpContext.Session.SetInt32(Sessao.CODIGO_USUARIO, (int)usuario.Codigo);
+                    HttpContextAcessor.HttpContext.Session.SetString(Sessao.NOME_USUARIO, Usuario.Nome);
+                    HttpContextAcessor.HttpContext.Session.SetString(Sessao.EMAIL_USUARIO, Usuario.Email);
+                    HttpContextAcessor.HttpContext.Session.SetInt32(Sessao.CODIGO_USUARIO, (int)Usuario.Codigo);
                     HttpContextAcessor.HttpContext.Session.SetInt32(Sessao.LOGADO, 1);
 
                     return RedirectToAction("Index", "Home");
+
+                }
+                else
+                {
+                    ViewData["ErroLogin"] = "O Email ou senha informado não existe no sistema!";
+                    return View(model);
+
                 }
             }
             else
             {
-
-            }
                 return View(model);
+            }
         }
     }
 }

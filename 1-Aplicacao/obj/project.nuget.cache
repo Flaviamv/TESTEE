@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eQ2I7KDQLeU=",
+  "dgSpecHash": "MRRsNt7zOo8=",
   "success": true,
-  "projectFilePath": "/Users/flavia-asa/Documents/SistemVenda/1-Aplicacao/SistemVenda.csproj",
+  "projectFilePath": "/Users/flavia-asa/Documents/sistemvenda-ddd/SistemVenda/1-Aplicacao/Aplicacao.csproj",
   "expectedPackageFiles": [
     "/Users/flavia-asa/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/flavia-asa/.nuget/packages/microsoft.aspnetcore.mvc.razor.extensions/6.0.0/microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",

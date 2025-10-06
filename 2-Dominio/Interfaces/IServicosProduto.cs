@@ -7,6 +7,9 @@ namespace Dominio.Interfaces
 {
     public interface IServicosProduto : IServicoCRUD<Produto>
     {
-         
+        //   IEnumerable<Produto> Listagem();
+        // void Cadastrar(Produto produto);
+        // Produto CarregarRegistro(int id);
+        // void Excluir(int id);
     }
 }

@@ -7,7 +7,6 @@ using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using SistemVenda.DAL;
 using SistemVenda.Entidade;
 using SistemVenda.Models;
 
@@ -16,11 +15,14 @@ namespace SistemVenda.Controllers
     public class ProdutoController : Controller
     {
         readonly IServicoAplicacaoProduto ServicoAplicacao;
+        readonly IServicoAplicacaoCategoria ServicoAplicacaoCategoria;
 
-        public ProdutoController(IServicoAplicacaoProduto servico)
-
+        public ProdutoController(
+            IServicoAplicacaoProduto servicoAplicacao,
+            IServicoAplicacaoCategoria servicoAplicacaoCategoria)
         {
-            ServicoAplicacao = servico;
+            ServicoAplicacao = servicoAplicacao;
+            ServicoAplicacaoCategoria = servicoAplicacaoCategoria;
         }
 
         public IActionResult Index()
@@ -30,23 +32,12 @@ namespace SistemVenda.Controllers
 
         public IActionResult Cadastro(int? id)
         {
-            ProdutoViewModel viewModel = new ProdutoViewModel();
+            ProdutoViewModel viewModel = new ProdutoViewModel(); 
 
             if (id != null)
             {
                 viewModel = ServicoAplicacao.CarregarRegistro((int)id);
             }
-            return View(viewModel);
-        }
-
-        [HttpGet] //renderiza tela vazia 
-        public IActionResult Cadastro(int? id)
-        {
-            if (id != null)
-            {
-                viewModel = ServicoAplicacao.CarregarRegistro((int)id);
-            }
-
             return View(viewModel);
         }
 
@@ -56,12 +47,14 @@ namespace SistemVenda.Controllers
             if (ModelState.IsValid)
             {
                 {
-                    ServicoAplicacaoProduto.Cadastro(entidade);
+                    ServicoAplicacao.Cadastrar(entidade);
                 }
             }
 
             else
             {
+                ProdutoViewModel viewModel = new ProdutoViewModel();
+                viewModel.ListaCategorias = ServicoAplicacaoCategoria.ListaCategoriasDropDownList();
                 return View(entidade);
             }
 
@@ -71,14 +64,8 @@ namespace SistemVenda.Controllers
             [HttpDelete]
             public IActionResult Excluir([FromRoute] int id)
             {
-                var ent = new Produto() { Codigo = id };
-                mContext.Produto.Remove(ent);
-                var success = mContext.SaveChanges() > 0;
-                var response = new ApiResponse<bool>(success);
-                if (!success)
-                    response.Message = "Falha ao excluir produto.";
-
-                return Json(response);
+                ServicoAplicacaoCategoria.Excluir(id);
+                return RedirectToAction("Index");
             }
         }
     }

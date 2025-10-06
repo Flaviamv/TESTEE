@@ -1,6 +1,6 @@
 namespace SistemVenda.Dominio.Entidade
 {
-    public class VendaProduto
+    public class VendaProduto 
     {
         public int CodigoVenda { get; set; }
         public int CodigoProduto { get; set; }

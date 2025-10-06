@@ -6,6 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using SistemVenda.Entidade;
 using SistemVenda.Dominio.Entidade;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Razor.Language;
 
 namespace Aplicacao.Servico
 {
@@ -50,6 +53,25 @@ namespace Aplicacao.Servico
             _servicoCategoria.Excluir(id);
         }
 
+        public IEnumerable<SelectListItem> ListaCategoriasDropDownList()
+        {
+            List<SelectListItem> retorno = new List<SelectListItem>();
+
+            var lista = this.Listagem();
+
+            foreach (var item in lista)
+            {
+                SelectListItem categoria = new SelectListItem()
+                {
+                    Value = item.Codigo.ToString(),
+                    Text = item.Descricao
+                };
+                retorno.Add(categoria);
+            }
+            return retorno;
+
+        }
+
         public IEnumerable<CategoriaViewModel> Listagem()
         {
             var lista = _servicoCategoria.Listagem();
@@ -66,5 +88,5 @@ namespace Aplicacao.Servico
             }
             return listaCategoria;
         }
-    }
+    } 
 }
