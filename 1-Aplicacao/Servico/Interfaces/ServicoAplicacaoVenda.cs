@@ -28,8 +28,7 @@ namespace Aplicacao.Servico
                 Data = (DateTime)venda.Data,
                 CodigoCliente = (int)venda.CodigoCliente,
                 Total = venda.Total,
-                Produto = JsonConvert.DeserializeObject<ICollection<VendaProduto>>(venda.JsonProdutos)
-
+                Produto = JsonConvert.DeserializeObject<ICollection<VendaProdutoDTO>>(venda.JsonProdutos)
             };
 
             _servicoVenda.Cadastrar(item);

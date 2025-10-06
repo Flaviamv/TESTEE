@@ -1,5 +1,6 @@
 using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
+using SistemVenda.Repositorio.Entidades;
 public class Program
 {
     private static void Main(string[] args)

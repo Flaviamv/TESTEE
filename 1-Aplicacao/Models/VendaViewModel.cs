@@ -24,7 +24,7 @@ namespace SistemVenda.Models
 
         public string JsonProdutos { get; set; }
 
-        public ICollection<VendaProduto> Produto { get; set; }
+        public ICollection<VendaProdutoDTO> Produto { get; set; }
         public decimal Total { get; set; }
 
     }

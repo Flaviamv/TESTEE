@@ -13,6 +13,6 @@ namespace SistemVenda.Entidade
         [ForeignKey("Cliente")]
         public int CodigoCliente { get; set; }
         public Cliente Cliente { get; set; }
-        public ICollection<VendaProduto> Produtos { get; set; }
+        public ICollection<VendaProdutoDTO> Produtos { get; set; }
     }
 }

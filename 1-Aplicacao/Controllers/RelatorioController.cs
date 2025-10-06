@@ -7,6 +7,7 @@ using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using SistemVenda.Repositorio;
+using SistemVenda.Repositorio.Entidades;
 
 
 namespace SistemVenda.Controllers
@@ -20,25 +21,26 @@ namespace SistemVenda.Controllers
         {
             ServicoVenda = servicoVenda;
         }
-        public IActionResult Grafico()
-        {
-            var lista = ServicoVenda.ListaGrafico().ToList();
+        //TO-DO: Arrumar
+        //public IActionResult Grafico()
+        //{
+        //    var lista = ServicoVenda.ListaGrafico().ToList();
 
-            var random = new Random();
+        //    var random = new Random();
 
-            for (int i = 0; i < lista.Count; i++)
-            {
-                valores += lista[i].TotalVendido.ToString() + ",";
-                labels += lista[i].Descricao.ToString() + ",";
-                cores += "'" + String.Format("#(0:x6)", random.Next(0x1000000)) + ",";
-            }
+        //    for (int i = 0; i < lista.Count; i++)
+        //    {
+        //        valores += lista[i].TotalVendido.ToString() + ",";
+        //        labels += lista[i].Descricao.ToString() + ",";
+        //        cores += "'" + String.Format("#(0:x6)", random.Next(0x1000000)) + ",";
+        //    }
 
-            ViewBag.Valores= valores;
-            ViewBag.Labels = labels;
-            ViewBag.Cores = cores;
+        //    ViewBag.Valores= valores;
+        //    ViewBag.Labels = labels;
+        //    ViewBag.Cores = cores;
 
-            return View();
-        }
+        //    return View();
+        //}
     }
 
     public class GraficoViewModel

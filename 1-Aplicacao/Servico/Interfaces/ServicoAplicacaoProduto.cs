@@ -22,19 +22,21 @@ namespace Aplicacao.Servico
 
         public IEnumerable<SelectListItem> ListaProdutoDropDownList()
         {
-            var lista = _servicoProduto.Listagem();
+            //TO-DO: Arrumar
+            //var lista = _servicoProduto.Listagem();
 
-            foreach (var item in lista)
-            {
-                SelectListItem produto = new SelectListItem()
-                {
-                    Value = item.Codigo.ToString(),
-                    Text = item.Descricao
-                };
-                lista.Add(produto);
-            }
+            //foreach (var item in lista)
+            //{
+            //    SelectListItem produto = new SelectListItem()
+            //    {
+            //        Value = item.Codigo.ToString(),
+            //        Text = item.Descricao
+            //    };
+            //    lista.Add(produto);
+            //}
 
-            return lista;
+            //return lista;
+            return new List<SelectListItem>();
         }
 
         public void Cadastrar(ProdutoViewModel produto)
@@ -82,17 +84,28 @@ namespace Aplicacao.Servico
 
             foreach (var item in lista)
             {
+                //TO-DO: Arrumar
                 ProdutoViewModel produto = new ProdutoViewModel()
                 {
-                    Codigo = produto.Codigo,
-                    Descricao = produto.Descricao,
-                    Quantidade = produto.Quantidade,
-                    Valor = (decimal)produto.Valor,
-                    CodigoCategoria = (int)produto.CodigoCategoria
+                    //Codigo = produto.Codigo,
+                    //Descricao = produto.Descricao,
+                    //Quantidade = produto.Quantidade,
+                    //Valor = (decimal)produto.Valor,
+                    //CodigoCategoria = (int)produto.CodigoCategoria
                 };
                 listaProduto.Add(produto);
             }
             return listaProduto;
+        }
+
+        public IEnumerable<SelectListItem> ListaClienteDropDownList()
+        {
+            throw new NotImplementedException();
+        }
+
+        string? IServicoAplicacaoProduto.Listagem()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -15,6 +15,6 @@ namespace SistemVenda.Entidade
         [ForeignKey("Categoria")]
         public int CodigoCategoria { get; set; }
         public Categoria Categoria { get; set; }
-        public ICollection<VendaProduto> Vendas { get; set; }
+        public ICollection<VendaProdutoDTO> Vendas { get; set; }
     }
 }
