@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using Aplicacao.Servico;
-using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 using SistemVenda.Helpers;
 using SistemVenda.Models;
 
@@ -48,11 +47,10 @@ namespace SistemVenda.Controllers
 
                 bool login = ServicoAplicacaoUsuario.ValidarLogin(model.Email, Senha);
 
-                var Usuario = ServicoAplicacaoUsuario.RetornarDadosUsuario(model.Email, Senha);
-
                 if (login)
                 {
                     //colocar os dados do usuario na sessao
+                    var Usuario = ServicoAplicacaoUsuario.RetornarDadosUsuario(model.Email, Senha);
                     HttpContextAcessor.HttpContext.Session.SetString(Sessao.NOME_USUARIO, Usuario.Nome);
                     HttpContextAcessor.HttpContext.Session.SetString(Sessao.EMAIL_USUARIO, Usuario.Email);
                     HttpContextAcessor.HttpContext.Session.SetInt32(Sessao.CODIGO_USUARIO, (int)Usuario.Codigo);

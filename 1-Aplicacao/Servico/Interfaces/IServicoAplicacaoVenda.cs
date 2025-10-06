@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using SistemVenda.Controllers;
 using SistemVenda.Models;
 
-namespace Aplicacao.Servico.Interfaces
+namespace SistemVenda.AplicacaoAplicacao.Servico.Interfaces
 {
     public interface IServicoAplicacaoVenda
     {

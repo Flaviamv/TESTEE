@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using Aplicacao.Servico;
-using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using SistemVenda.Dominio.Entidade;
-
-using SistemVenda.Entidade;
+using SistemVenda.Aplicacao.Servico.Interfaces;
+using SistemVenda.AplicacaoAplicacao.Servico.Interfaces;
 using SistemVenda.Models;
 
 namespace SistemVenda.Controllers

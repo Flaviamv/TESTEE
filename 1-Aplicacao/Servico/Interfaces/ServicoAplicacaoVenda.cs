@@ -1,15 +1,13 @@
-using Aplicacao.Servico.Interfaces;
 using Newtonsoft.Json;
+using SistemVenda.AplicacaoAplicacao.Servico.Interfaces;
 using SistemVenda.Controllers;
-using SistemVenda.Dominio.Entidade;
-using SistemVenda.Entidade;
 using SistemVenda.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Aplicacao.Servico
+namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoVenda : IServicoAplicacaoVenda
     {

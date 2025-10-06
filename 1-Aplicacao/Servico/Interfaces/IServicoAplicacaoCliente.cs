@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SistemVenda.Models;
 
-namespace Aplicacao.Servico.Interfaces
+namespace SistemVenda.Aplicacao.Servico.Interfaces
 {
     public interface IServicoAplicacaoCliente
     {

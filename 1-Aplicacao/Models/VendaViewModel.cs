@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using SistemVenda.Entidade;
 
 namespace SistemVenda.Models
 {

@@ -1,14 +1,12 @@
-using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using SistemVenda.Dominio.Entidade;
-using SistemVenda.Entidade;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 using SistemVenda.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Aplicacao.Servico
+namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoCliente : IServicoAplicacaoCliente
     {

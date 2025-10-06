@@ -1,16 +1,14 @@
-using Aplicacao.Servico.Interfaces;
 using System;
 using SistemVenda.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SistemVenda.Entidade;
-using SistemVenda.Dominio.Entidade;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Razor.Language;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 
-namespace Aplicacao.Servico
+namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoCategoria : IServicoAplicacaoCategoria
     {

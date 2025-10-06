@@ -2,11 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Aplicacao.Servico;
-using Aplicacao.Servico.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SistemVenda.Entidade;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 using SistemVenda.Models;
 
 namespace SistemVenda.Controllers

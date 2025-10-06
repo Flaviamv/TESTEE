@@ -1,15 +1,13 @@
-using Aplicacao.Servico.Interfaces;
 using System;
 using SistemVenda.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SistemVenda.Entidade;
-using SistemVenda.Dominio.Entidade;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Aplicacao.Servico.Interfaces;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 
-namespace Aplicacao.Servico
+
+namespace SistemVenda.Aplicacao.Servico
 {
     public class ServicoAplicacaoProduto : IServicoAplicacaoProduto
     {
@@ -24,6 +22,8 @@ namespace Aplicacao.Servico
         {
             var lista = _servicoProduto.Listagem();
 
+            List<SelectListItem> ListaProduto = new List<SelectListItem>();
+
             foreach (var item in lista)
             {
                 SelectListItem produto = new SelectListItem()
@@ -31,10 +31,10 @@ namespace Aplicacao.Servico
                     Value = item.Codigo.ToString(),
                     Text = item.Descricao
                 };
-                lista.Add(produto);
-            }
+                ListaProduto.Add(produto);
 
-            return lista;
+            }
+            return ListaProduto;
         }
 
         public void Cadastrar(ProdutoViewModel produto)
@@ -84,11 +84,11 @@ namespace Aplicacao.Servico
             {
                 ProdutoViewModel produto = new ProdutoViewModel()
                 {
-                    Codigo = produto.Codigo,
-                    Descricao = produto.Descricao,
-                    Quantidade = produto.Quantidade,
-                    Valor = (decimal)produto.Valor,
-                    CodigoCategoria = (int)produto.CodigoCategoria
+                    Codigo = item.Codigo,
+                    Descricao = item.Descricao,
+                    Quantidade = item.Quantidade,
+                    Valor = (decimal)item.Valor,
+                    CodigoCategoria = (int)item.CodigoCategoria
                 };
                 listaProduto.Add(produto);
             }

@@ -4,7 +4,7 @@ using SistemVenda.Models;
 using System.Net;
 using System.Text;
 
-namespace SistemaVendas.Middleware;
+namespace SistemVendas.Middleware;
 
 public class ExceptionHandler
 {

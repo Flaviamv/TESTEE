@@ -1,5 +1,9 @@
-using Microsoft.CodeAnalysis.Options;
+using SistemVenda.Aplicacao.Servico;
+using SistemVenda.Aplicacao.Servico.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using SistemVenda.Repositorio;
+
+
 public class Program
 {
     private static void Main(string[] args)
@@ -40,6 +44,13 @@ public class Program
             o.JsonSerializerOptions.PropertyNamingPolicy = null;
             o.JsonSerializerOptions.DictionaryKeyPolicy = null;
         });
+
+        builder.Services.AddScoped<IServicoAplicacaoCategoria, ServicoAplicacaoCategoria>();
+        builder.Services.AddScoped<IServicoAplicacaoUsuario, ServicoAplicacaoUsuario>();
+        builder.Services.AddScoped<IServicoAplicacaoCliente, ServicoAplicacaoCliente>();
+        builder.Services.AddScoped<IServicoAplicacaoProduto, ServicoAplicacaoProduto>();
+        builder.Services.AddScoped<IServicoAplicacaoVenda, ServicoAplicacaoVenda>();
+
 
         builder.Services.AddMvc();
 
